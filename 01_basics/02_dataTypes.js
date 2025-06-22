@@ -5,3 +5,12 @@ console.table([typeof "Tanmay", typeof 123, typeof true, typeof null, typeof und
 
 
 //interview question : different between null and undefined 
+
+/*
+
+Note:
+null =>standalone value
+symbol=> unique
+object datatype
+*/
+
