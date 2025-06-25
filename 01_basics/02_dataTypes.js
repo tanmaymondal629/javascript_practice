@@ -50,3 +50,5 @@ const myFunction = function(){
 }
 
 console.table([typeof heros, typeof userObj, typeof myFunction]);
+
+// https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html
