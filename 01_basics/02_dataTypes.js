@@ -52,3 +52,34 @@ const myFunction = function(){
 console.table([typeof heros, typeof userObj, typeof myFunction]);
 
 // https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html
+
+// +++++++++++++++++++++++++++++ Stack and Heap memory ++++++++++++++++++++++++++++++++++++++++++++++
+
+/* Stack stores Primitive datatypes means when we declare a primitive type data then it stores in a stack memory 
+ and if I copy the value to another variable then stack memory will share copy of the value not reference. */
+
+/* Heap stores reference datatypes means when we declare a reference type data then it stores in heap memory and if I 
+ do copy of it to another variable then heap memory will share it's reference */
+
+//  stack example
+let numberOne = 3
+let numberTwo = numberOne
+console.log(`Now numberTwo value is: ${numberTwo}`);
+numberTwo = 4
+console.log(`After changeof numberTwo, value is: ${numberTwo}`);
+
+// heap example
+let userOne = {
+    name: "Tanmay",
+    email: "matainja088@gmail.com",
+}
+
+let userTwo = userOne;
+
+console.log("userOne email before call by reference: "+ userOne.email);
+console.log("userTwo email before call by reference: "+ userTwo.email);
+
+userTwo.email = "tanmaymondal629@gmail.com"
+
+console.log("userOne email after call by reference: "+ userOne.email);
+console.log("userTwo email after call by reference: "+ userTwo.email);
