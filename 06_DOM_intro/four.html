@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+</html>
+
+<script>
+    // Add element
+    function addLanguage(language){
+        let ul = document.querySelector(".language");
+        // console.log(ul);
+        let newLi = document.createElement('li')
+        newLi.innerHTML = language
+        // console.log(newLi);
+        ul.appendChild(newLi)
+    }
+
+    function addOptimizeLanguage(language){
+        let ul = document.querySelector(".language");
+        // console.log(ul);
+        let newLi = document.createElement('li')
+        newLi.appendChild(document.createTextNode(language))
+        ul.appendChild(newLi)
+    }
+    
+    addLanguage('C')
+    addOptimizeLanguage('C++')
+
+    // edit element
+        
+    // option 1-bad approched
+    let secondLi = document.querySelector('li:nth-child(2)')
+    // console.log(secondLi);
+    secondLi.innerHTML = "Java";
+
+        
+    // option 2- better approched
+    let firstLi = document.querySelector('li:first-child')
+    // console.log(firstLi);
+    newLanguageLi = document.createElement('li')
+    newLanguageLi.appendChild(document.createTextNode('Python'))
+    firstLi.replaceWith(newLanguageLi)
+        
+    // option 3- another way to edit
+    let lastLi = document.querySelector('li:last-child')
+    // console.log(lastLi);
+    lastLi.outerHTML = '<li>PHP<li/>'
+    
+    // remove element
+    let selectedLi = document.querySelector('li:last-child')
+    console.log(selectedLi); 
+    selectedLi.remove()
+</script>
