@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const hex = '123456789ABCDEF';
+    let intervalId;
+    let hexCode;
+    
+    function hexCodeGenerator(){
+        hexCode='#'
+        for (let i = 0; i < 6; i++) {
+            let index = randomIndexGenerator();
+            hexCode += hex[index];
+        }
+        return hexCode;
+    }
+    
+
+    function randomIndexGenerator(){
+        return Math.floor(Math.random() * 15)
+    }
+
+    function startChange(){
+        intervalId = setInterval(function(){
+            let bodyColor = hexCodeGenerator()
+            console.log(bodyColor);
+            
+            document.body.style.backgroundColor= bodyColor;
+        },1000);
+    }
+    
+
+    document.getElementById('start').addEventListener('click',function(){
+        startChange();
+    })
+    
+    document.getElementById('stop').addEventListener('click',function(){
+        clearInterval(intervalId)
+    })
+</script>
+</html>

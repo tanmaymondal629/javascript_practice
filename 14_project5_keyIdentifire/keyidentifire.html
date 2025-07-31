@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display:flex;justify-content: center; align-items: center; vertical-align: middle;">
+        <table border="1px" style="width: 500px;;">
+            <tr style="height: 30px;">
+                <th>Key</th>
+                <th>KeyCode</th>
+                <th>Code</th>
+            </tr>
+            <tr style="height: 30px;">
+                <td id="key"></td>
+                <td id="keycode"></td>
+                <td id="code"></td>
+            </tr>
+        </table> 
+    </div>
+    
+</body>
+<script>
+    window.addEventListener('keydown', function(e){
+        document.querySelector('#key').innerHTML = e.key
+        document.querySelector('#keycode').innerHTML = e.keyCode
+        document.querySelector('#code').innerHTML = e.code
+    })
+</script>
+</html>
